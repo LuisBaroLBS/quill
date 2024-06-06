@@ -140,7 +140,11 @@ BaseTheme.DEFAULTS = extend(true, {}, Theme.DEFAULTS, {
                 }
                 reader.readAsDataURL(fileInput.files[0]);
               }
-            });
+            }),
+            fileInput.addEventListener('click', function (event) {
+                event.stopPropagation();
+                console.log("image src");
+            }),
             this.container.appendChild(fileInput);
           }
           fileInput.click();
